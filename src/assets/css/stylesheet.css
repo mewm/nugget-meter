@@ -2,7 +2,7 @@
     -webkit-user-select: none;  /* Disable selection/copy of elements when tapping for a long time */
     -webkit-touch-callout: none; /* Disable touch callouts */	margin: 0;
     padding: 0;
-    color: white;
+    color: black;
 
 }
 
@@ -20,4 +20,28 @@ input, textarea, [contenteditable] * {
 
 .content-padded {
     padding: 10px !important;
+}
+
+.right-align {
+    float: right;
+    overflow: hidden;
+}
+
+
+
+.topcoat-button,
+.topcoat-button--quiet,
+.topcoat-button--large,
+.topcoat-button--large--quiet,
+.topcoat-button--cta,
+.topcoat-button--large--cta,
+.topcoat-button-bar__button,
+.topcoat-button-bar__button--large {
+    background-color: #ff9900 !important;
+    border: 1px solid #a5a8a8 !important;
+}
+
+.nasty-icons {
+    font-family: "nasty-icons";
+    src: url("../font/nasty-icons.ttf");
 }

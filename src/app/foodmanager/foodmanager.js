@@ -2,7 +2,8 @@
 'use strict';
 
 var foodManager = angular.module('nuggetMeterApp.foodManager',[
-	'nuggetMeterApp.foodService'
+	'nuggetMeterApp.foodService',
+	'ngTouch'
 ]);
 
 
@@ -18,7 +19,10 @@ foodManager.controller('FoodManagerController', ['$scope', 'foodService', functi
 
 	};
 
+
 	$scope.addNewFood = function() {
+		console.log('test');
+
 		foodService.add($scope.newFood);
 		$scope.foods = foodService.getAll();
 	};

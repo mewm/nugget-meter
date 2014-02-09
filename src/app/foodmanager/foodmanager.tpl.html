@@ -1,27 +1,28 @@
 <div class="topcoat-navigation-bar">
     <div class="topcoat-navigation-bar__item center full">
-        <h1 class="topcoat-navigation-bar__title">Add food item</h1>
+        <h1 class="topcoat-navigation-bar__title">ADD FOOD</h1>
     </div>
 </div>
 
-
-
-    <input data-ng-model="newFood.name" type="text" placeholder="Food" class="topcoat-text-input--large full center block"><br/>
-    <input data-ng-model="newFood.cooking_time" type="text" placeholder="Cooking time"  class="topcoat-text-input--large full center block"><br/>
-
-
 <div class="content-padded">
-    <input data-ng-click="addNewFood()" type="submit" value="Add Item" class="topcoat-button--cta full center block" >
+    <input data-ng-model="newFood.name" type="text" placeholder="Food" class="topcoat-text-input--large full center block">
+</div>
+<div class="content-padded">
+    <input data-ng-model="newFood.cooking_time" type="text" placeholder="Minutes"  class="topcoat-text-input--large full center block">
+</div>
+<div class="content-padded">
+    <button data-ng-click="addNewFood()" class="topcoat-button--cta full center block" >ADD FOOD</button>
 </div>
 
 
+
 <div class="topcoat-list">
-    <h3 class="topcoat-list__header">Foods</h3>
+    <h3 class="topcoat-list__header">FOODS</h3>
     <ul class="topcoat-list__container">
-        <li class="topcoat-list__item" data-ng-repeat="food in foods | orderBy:'-cooking_time'">
-            {{ food.name }} - {{ food.cooking_time }} seconds
-            <button class="topcoat-icon-button--quiet" data-ng-click="removeFood(food)">
-                <span class="topcoat-icon delete-icon"></span>
+        <li class="topcoat-list__item" style="height: 50px; line-height: 50px;" data-ng-repeat="food in foods | orderBy:'-cooking_time'">
+            {{ food.name }} - {{ food.cooking_time }} minutes
+            <button data-ng-click="removeFood(food)" class="topcoat-icon-button right-align">
+                <span class="topcoat-icon delete-icon block"></span>
             </button>
         </li>
     </ul>

@@ -6,25 +6,25 @@ steroids.config.name = "nugget-meter"
 # -- Initial Location --
 steroids.config.location = "http://localhost/index.html"
 
-# -- Tab Bar --
-# steroids.config.tabBar.enabled = true
-# steroids.config.tabBar.tabs = [
-#   {
-#     title: "Index"
-#     icon: "icons/pill@2x.png"
-#     location: "http://localhost/index.html"
-#   },
-#   {
-#     title: "Internet"
-#     icon: "icons/telescope@2x.png"
-#     location: "http://www.google.com"
-#   }
-# ]
+#-- Tab Bar --
+steroids.config.tabBar.enabled = true
+steroids.config.tabBar.tabs = [
+   {
+     title: "KITCHEN"
+     icon: "assets/img/icons/pill@2x.png"
+     location: "http://localhost/#/kitchen"
+   },
+   {
+     title: "FOODS"
+     icon: "assets/img/icons/telescope@2x.png"
+     location: "http://localhost/#/foodmanager"
+   }
+]
 
-# steroids.config.tabBar.tintColor = "#000000"
-# steroids.config.tabBar.tabTitleColor = "#00aeef"
-# steroids.config.tabBar.selectedTabTintColor = "#ffffff"
-# steroids.config.tabBar.selectedTabBackgroundImage = "icons/pill@2x.png"
+steroids.config.tabBar.tintColor = "#000000"
+steroids.config.tabBar.tabTitleColor = "#ffffff"
+steroids.config.tabBar.selectedTabTintColor = "#00aeef"
+steroids.config.tabBar.selectedTabBackgroundImage = "icons/pill@2x.png"
 
 # steroids.config.tabBar.backgroundImage = ""
 

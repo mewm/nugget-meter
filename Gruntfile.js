@@ -270,7 +270,8 @@ module.exports = function ( grunt ) {
 				boss: true,
 				eqnull: true,
 				globals: {
-					'angular': true
+					'angular': true,
+					'console': true
 				}
 			}
 
@@ -388,7 +389,7 @@ module.exports = function ( grunt ) {
 				files: [
 					'<%= app_files.js %>'
 				],
-				tasks: [ 'jshint:src', 'copy:build_appjs' ]
+				tasks: [ 'default' ]
 			},
 
 
@@ -408,7 +409,7 @@ module.exports = function ( grunt ) {
 			 */
 			html: {
 				files: [ '<%= app_files.html %>' ],
-				tasks: [ 'index:build' ]
+				tasks: [ 'default' ]
 			},
 
 			/**
@@ -419,7 +420,7 @@ module.exports = function ( grunt ) {
 					'<%= app_files.atpl %>',
 					'<%= app_files.ctpl %>'
 				],
-				tasks: [ 'html2js' ]
+				tasks: [ 'default' ]
 			},
 
 			/**
@@ -427,7 +428,7 @@ module.exports = function ( grunt ) {
 			 */
 			css: {
 				files: [ 'src/**/*.css' ],
-				tasks: [ 'recess:build' ]
+				tasks: [ 'default' ]
 			}
 
 
@@ -444,7 +445,7 @@ module.exports = function ( grunt ) {
 	 * before watching for changes.
 	 */
 	grunt.renameTask( 'watch', 'delta' );
-	grunt.registerTask( 'watch', [ 'build', 'delta' ] );
+	grunt.registerTask( 'watch', [ 'build', 'compile', 'delta' ] );
 
 	/**
 	 * The default task is to build and compile.

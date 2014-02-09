@@ -51,6 +51,7 @@ module.exports = {
 			'vendor/angular/angular.js',
 			'vendor/angular-local-storage/angular-local-storage.js',
 			'vendor/angular-route/angular-route.js',
+			'vendor/angular-touch/angular-touch.js',
 			'vendor/steroids-js/steroids.js'
 		],
 

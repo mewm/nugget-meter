@@ -21,6 +21,7 @@ config(['$routeProvider', function($routeProvider) {
 		{ templateUrl: 'kitchen/kitchen.tpl.html', controller: 'KitchenController' }
 	);
 
+
 	$routeProvider.otherwise(
 		{ redirectTo: '/foodmanager' }
 	);
