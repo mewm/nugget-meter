@@ -1,0 +1,76 @@
+* {
+    -webkit-user-select: none;  /* Disable selection/copy of elements when tapping for a long time */
+    -webkit-touch-callout: none; /* Disable touch callouts */	margin: 0;
+    padding: 0;
+    color: white;
+
+}
+
+input, textarea, [contenteditable] * {
+    -webkit-user-select: auto;  /* Allow selection for input elements and those with contenteditable attribute */
+}
+
+.content-padded {
+    padding: 10px;
+}
+
+@font-face {
+  font-family: "Open_Sans";
+  src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+body {
+	font-family: "Open_Sans", sans-serif;
+}
+
+section {
+	margin: 15px;
+	padding: 15px;
+	background: #393a3b;
+}
+
+.topcoat-text-input--large, .topcoat-button {
+
+/*	height: 35px;
+	margin: 5px 0;
+	font-size: 16px;*/
+	color: #fff;
+}
+
+.topcoat-text-input--large:focus {
+
+  color: #fff;
+/*  border: 1px solid #333434;
+  background-color: #454646;
+  box-shadow: none;*/
+}
+
+.topcoat-button {
+	text-transform: uppercase;
+}
+
+table tr td{
+}
+
+table tr:nth-child(even) {
+	background-color: #4b4d4e;
+}
+
+.tEdit {
+	text-align: center;
+}
+
+/*#cooking_prepare select {
+	background: #454646;
+
+	height: 35px;
+	padding: 5px;
+	font-size: 16px;
+	border-radius: 6px;
+	border: 1px solid #333434;
+	box-shadow: inset 0 1px rgba(0,0,0,0.05);
+}
+
+#cooking_prepare select option {
+	padding: 5px;
+}*/

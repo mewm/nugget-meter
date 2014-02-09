@@ -1,0 +1,23 @@
+<!-- Input -->
+<section id="cooking_input">
+    <h1>Add New Item:</h1>
+    <form>
+        <input data-ng-model="newFood.name" type="text" placeholder="Food" class="topcoat-text-input--large"><br/>
+        <input data-ng-model="newFood.cooking_time" type="text" placeholder="Cooking time"  class="topcoat-text-input--large"><br/>
+        <input data-ng-click="addNewFood()" type="submit" value="Add Item" class="topcoat-button">
+    </form>
+</section>
+
+<!-- "Output" :P -->
+<section class="cooking_table">
+    <h1>Edit/Remove Items:</h1>
+    <table>
+        <tr data-ng-repeat="food in foods | orderBy:'-cooking_time'">
+            <td>{{ food.name }}</td>
+            <td>{{ food.cooking_time }}</td>
+            <td class="tEdit"><i class="fa fa-refresh"></i></td>
+            <td class="tEdit"><i data-ng-click="removeFood(food)" class="fa fa-ban"></i></td>
+        </tr>
+    </table>
+</section>
+
