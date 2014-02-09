@@ -4,16 +4,21 @@
     </div>
 </div>
 
+<form name="foodForm" ng-submit="submit();">
 <div class="content-padded">
-    <input data-ng-model="newFood.name" type="text" placeholder="Food" class="topcoat-text-input--large full center block">
+    <input data-ng-model="newFood.name" ng-minlength="1" ng-maxlength="30" name="name" type="text" placeholder="Food" class="topcoat-text-input--large full center block" required>
+    <span ng-show="foodForm.name.$invalid && !foodForm.name.$pristine" class="help-block">Name is required.</span>
 </div>
 <div class="content-padded">
-    <input data-ng-model="newFood.cooking_time" type="text" placeholder="Minutes"  class="topcoat-text-input--large full center block">
+    <select name="cooking_time" ng-model="newFood.cooking_time" ng-options="value for value in intervals" required>
+        <option value="">Minutes</option>
+    </select>
 </div>
 <div class="content-padded">
-    <button data-ng-click="addNewFood()" class="topcoat-button--cta full center block" >ADD FOOD</button>
+    <button ng-disabled="foodForm.$invalid" data-ng-click="addNewFood()" class="topcoat-button--cta full center block" >ADD FOOD</button>
 </div>
 
+</form>
 
 
 <div class="topcoat-list">
