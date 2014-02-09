@@ -1,22 +1,26 @@
 @font-face {
   font-family: "Source Sans";
-  src: url("../fonts/SourceSansPro-Regular.otf");
+  src: url("../font/SourceSansPro-Regular.otf");
 }
 @font-face {
   font-family: "Source Sans";
-  src: url("../fonts/SourceSansPro-Light.otf");
+  src: url("../font/SourceSansPro-Light.otf");
   font-weight: 200;
 }
 @font-face {
   font-family: "Source Sans";
-  src: url("../fonts/SourceSansPro-Semibold.otf");
+  src: url("../font/SourceSansPro-Semibold.otf");
   font-weight: 600;
 }
+
+
+
+
 
 body {
   margin: 0;
   padding: 0;
-  background: #3a3f42 url("../../../steroids/www/vendor/topcoat/img/bg_dark.png") repeat-x;
+  background: #3a3f42 url("../img/topcoat/bg_dark.png") repeat-x;
   color: #000;
   font: 16px "Source Sans", helvetica, arial, sans-serif;
   font-weight: 200;
@@ -24,7 +28,7 @@ body {
 }
 
 .topcoat-icon--menu-stack {
-  background: url("../../../steroids/www/vendor/topcoat/img/hamburger_light.svg") no-repeat;
+  background: url("../img/topcoat/hamburger_light.svg") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -803,7 +807,7 @@ limitations under the License.
   padding: 0 0 0 2.7em;
   -webkit-border-radius: 30px;
   border-radius: 30px;
-  background-image: url("../../../steroids/www/vendor/topcoat/img/search_light.svg");
+  background-image: url("../img/topcoat/img/search_light.svg");
   background-position: 1em center;
   background-repeat: no-repeat;
   -webkit-background-size: 16px;

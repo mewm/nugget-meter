@@ -6,17 +6,19 @@
 angular.module('nuggetMeterApp', [
 	'ngRoute',
 	'nuggetMeterApp.foodManager',
-	'nuggetMeterApp.kitchen'
+	'nuggetMeterApp.kitchen',
+	'templates-app',
+	'templates-common'
 ]).
 
 config(['$routeProvider', function($routeProvider) {
 
 	$routeProvider.when('/foodmanager',
-		{ templateUrl: 'app/foodmanager/foodmanager.tpl.html', controller: 'FoodManagerController'}
+		{ templateUrl: 'foodmanager/foodmanager.tpl.html', controller: 'FoodManagerController'}
 	);
 
 	$routeProvider.when('/kitchen',
-		{ templateUrl: 'app/kitchen/kitchen.tpl.html', controller: 'KitchenController' }
+		{ templateUrl: 'kitchen/kitchen.tpl.html', controller: 'KitchenController' }
 	);
 
 	$routeProvider.otherwise(

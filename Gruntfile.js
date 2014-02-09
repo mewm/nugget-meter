@@ -105,7 +105,7 @@ module.exports = function ( grunt ) {
 			build_vendorjs: {
 				files: [
 					{
-						src: [ '<%= vendor_files.js %>' ],
+						src: [ '<%= vendor_files.js %>' ,'!**/steroids.js' ],
 						dest: '<%= build_dir %>/',
 						cwd: '.',
 						expand: true
@@ -132,6 +132,16 @@ module.exports = function ( grunt ) {
 					}
 				]
 			},
+			steroids_shit: {
+				files: [
+					{
+						src: [ '**/steroids.js' ],
+						dest: '<%= compile_dir %>/components',
+						cwd: 'vendor',
+						expand: true
+					}
+				]
+			}
 		},
 
 
@@ -314,10 +324,10 @@ module.exports = function ( grunt ) {
 				dir: '<%= build_dir %>',
 				src: [
 					'<%= vendor_files.js %>',
+					'!**/steroids.js',
 					'<%= build_dir %>/src/**/*.js',
 					'<%= html2js.common.dest %>',
 					'<%= html2js.app.dest %>',
-					'<%= vendor_files.css %>',
 					'<%= recess.build.dest %>'
 				]
 			},
@@ -331,7 +341,6 @@ module.exports = function ( grunt ) {
 				dir: '<%= compile_dir %>',
 				src: [
 					'<%= concat.compile_js.dest %>',
-					'<%= vendor_files.css %>',
 					'<%= recess.build.dest %>'
 				]
 			}
@@ -391,7 +400,7 @@ module.exports = function ( grunt ) {
 				files: [
 					'src/assets/**/*'
 				],
-				tasks: [ 'copy:build_assets', 'copy:build_mobile_assets' ]
+				tasks: [ 'copy:build_app_assets', 'copy:build_mobile_assets' ]
 			},
 
 			/**
@@ -419,7 +428,7 @@ module.exports = function ( grunt ) {
 			css: {
 				files: [ 'src/**/*.css' ],
 				tasks: [ 'recess:build' ]
-			},
+			}
 
 
 		}
@@ -456,7 +465,7 @@ module.exports = function ( grunt ) {
 	 * minifying your code.
 	 */
 	grunt.registerTask( 'compile', [
-		'recess:compile', 'copy:compile_assets', 'copy:compile_mobile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile'
+		'recess:compile', 'copy:compile_assets', 'copy:compile_mobile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile', 'copy:steroids_shit'
 	]);
 
 	/**

@@ -1,23 +1,32 @@
-<!-- Input -->
-<section id="cooking_input">
-    <h1>Add New Item:</h1>
+<div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+        <h1 class="topcoat-navigation-bar__title">Add food item</h1>
+    </div>
+</div>
+
+
     <form>
+        <div class="content-padded">
         <input data-ng-model="newFood.name" type="text" placeholder="Food" class="topcoat-text-input--large"><br/>
         <input data-ng-model="newFood.cooking_time" type="text" placeholder="Cooking time"  class="topcoat-text-input--large"><br/>
+
         <input data-ng-click="addNewFood()" type="submit" value="Add Item" class="topcoat-button">
+        </div>
     </form>
-</section>
 
-<!-- "Output" :P -->
-<section class="cooking_table">
-    <h1>Edit/Remove Items:</h1>
-    <table>
-        <tr data-ng-repeat="food in foods | orderBy:'-cooking_time'">
-            <td>{{ food.name }}</td>
-            <td>{{ food.cooking_time }}</td>
-            <td class="tEdit"><i class="fa fa-refresh"></i></td>
-            <td class="tEdit"><i data-ng-click="removeFood(food)" class="fa fa-ban"></i></td>
-        </tr>
-    </table>
-</section>
 
+
+<div class="content-padded">
+<div class="topcoat-list">
+    <h3 class="topcoat-list__header">Foods</h3>
+    <ul class="topcoat-list__container">
+        <li class="topcoat-list__item" data-ng-repeat="food in foods | orderBy:'-cooking_time'">
+            {{ food.name }} - {{ food.cooking_time }} seconds
+            <button class="topcoat-icon-button--quiet" data-ng-click="removeFood(food)">
+                <span class="topcoat-icon delete-icon"></span>
+            </button>
+        </li>
+    </ul>
+</div>
+
+</div>
