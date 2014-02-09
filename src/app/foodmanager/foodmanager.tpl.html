@@ -5,18 +5,16 @@
 </div>
 
 
-    <form>
-        <div class="content-padded">
-        <input data-ng-model="newFood.name" type="text" placeholder="Food" class="topcoat-text-input--large"><br/>
-        <input data-ng-model="newFood.cooking_time" type="text" placeholder="Cooking time"  class="topcoat-text-input--large"><br/>
 
-        <input data-ng-click="addNewFood()" type="submit" value="Add Item" class="topcoat-button">
-        </div>
-    </form>
-
+    <input data-ng-model="newFood.name" type="text" placeholder="Food" class="topcoat-text-input--large full center block"><br/>
+    <input data-ng-model="newFood.cooking_time" type="text" placeholder="Cooking time"  class="topcoat-text-input--large full center block"><br/>
 
 
 <div class="content-padded">
+    <input data-ng-click="addNewFood()" type="submit" value="Add Item" class="topcoat-button--cta full center block" >
+</div>
+
+
 <div class="topcoat-list">
     <h3 class="topcoat-list__header">Foods</h3>
     <ul class="topcoat-list__container">
@@ -29,4 +27,3 @@
     </ul>
 </div>
 
-</div>

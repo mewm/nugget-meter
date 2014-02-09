@@ -52,7 +52,7 @@ module.exports = function ( grunt ) {
 		 */
 		clean: [
 			'<%= build_dir %>',
-			'<%= compile_dir %>'
+			'<%= compile_dir %>/*'
 		],
 
 		/**
