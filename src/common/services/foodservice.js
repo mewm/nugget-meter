@@ -40,4 +40,14 @@ foodService.service('foodService', ['localStorageService', '$rootScope', functio
 		return foods;
 	};
 
+
+
+	this.updateRecipe = function(recipe) {
+		localStorageService.add('recipe', recipe);
+	};
+
+	this.getRecipe = function() {
+		return localStorageService.get('recipe');
+	};
+
 }]);

@@ -4,22 +4,25 @@
     </div>
 </div>
 
+<form name="foodForm">
 <div class="content-padded">
-    <input data-ng-model="newFood.name" type="text" placeholder="Food" class="topcoat-text-input--large full center block">
+    <select name="prepare_cook" ng-model="prepareCook.foodItem" ng-options="food as food.name + ' ' + food.cooking_time + ' minutes' for food in foods" required>
+        <option value="">Pick food!</option>
+    </select>
+    <p ng-show="formError.existsAlready">Now, it doesn't really make sense to add duplicate items to the list :P</p>
 </div>
+
 <div class="content-padded">
-    <input data-ng-model="newFood.cooking_time" type="text" placeholder="Minutes"  class="topcoat-text-input--large full center block">
+    <button ng-disabled="foodForm.$invalid" data-ng-click="addFoodToCook()" class="topcoat-button--cta full center block" >ADD FOOD</button>
 </div>
-<div class="content-padded">
-    <button data-ng-click="addNewFood()" class="topcoat-button--cta full center block" >ADD FOOD</button>
-</div>
+</form>
 
 
 
 <div class="topcoat-list">
-    <h3 class="topcoat-list__header">FOODS</h3>
+    <h3 class="topcoat-list__header">PREPARE TO COOK LIST</h3>
     <ul class="topcoat-list__container">
-        <li class="topcoat-list__item" style="height: 50px; line-height: 50px;" data-ng-repeat="food in foods | orderBy:'-cooking_time'">
+        <li class="topcoat-list__item" style="height: 50px; line-height: 50px;" data-ng-repeat="food in cook | orderBy:'-cooking_time'">
             {{ food.name }} - {{ food.cooking_time }} minutes
             <button data-ng-click="removeFood(food)" class="topcoat-icon-button right-align">
                 <span class="topcoat-icon delete-icon block"></span>
@@ -30,40 +33,7 @@
 
 
 
-<section id="cooking_prepare">
-    <h1>Select Item:</h1>
-    <select>
-        <option>Option1</option>
-        <option>Option2</option>
-        <option>Option3</option>
-        <option>Option4</option>
-        <option>Option5</option>
-        <option>Option6</option>
-    </select>
-    <table class="cooking_table">
-        <tr>
-            <td>Item1</td>
-            <td>00:00:00</td>
-            <td class="tEdit"><i class="fa fa-ban"></i></td>
-        </tr>
-        <tr>
-            <td>Item2</td>
-            <td>00:00:00</td>
-            <td class="tEdit"><i class="fa fa-ban"></i></td>
-        </tr>
-        <tr>
-            <td>Item3</td>
-            <td>00:00:00</td>
-            <td class="tEdit"><i class="fa fa-ban"></i></td>
-        </tr>
-        <tr>
-            <td>Item4</td>
-            <td>00:00:00</td>
-            <td class="tEdit"><i class="fa fa-ban"></i></td>
-        </tr>
-    </table>
+<div class="content-padded">
+    <button ng-disabled="cook.length == 0" data-ng-click="goGoGo()" class="topcoat-button--cta full center block grenz" >START COOOKING!</button>
+</div>
 
-    <form>
-        <input type="submit" value="Start Cooking" class="topcoat-button">
-    </form>
-</section>

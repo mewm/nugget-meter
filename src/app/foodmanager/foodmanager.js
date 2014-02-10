@@ -6,7 +6,6 @@ var foodManager = angular.module('nuggetMeterApp.foodManager',[
 	'ngTouch'
 ]);
 
-
 foodManager.controller('FoodManagerController', ['$scope', 'foodService', function($scope, foodService) {
 
 	$scope.foods = foodService.getAll();
@@ -20,15 +19,10 @@ foodManager.controller('FoodManagerController', ['$scope', 'foodService', functi
 	};
 
 
-
-
 	$scope.addNewFood = function() {
-		console.log('test');
-
 		foodService.add($scope.newFood);
 		$scope.foods = foodService.getAll();
 	};
-
 
 	$scope.intervals = [];
 	for(var i = 1; i <= 120; i++) {
@@ -36,7 +30,6 @@ foodManager.controller('FoodManagerController', ['$scope', 'foodService', functi
 	}
 
 	$scope.submit = function() {
-		alert('test');
 		$scope.newFood.cooking_time = null;
 		$scope.newFood.name = '';
 		$scope.foodForm.$setPristine();

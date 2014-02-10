@@ -1,8 +1,7 @@
 {
   "name": "nugget-meter",
   "version": "0.0.1",
-  "authors": [
-  ],
+  "authors": [],
   "ignore": [
     "**/.*",
     "node_modules",

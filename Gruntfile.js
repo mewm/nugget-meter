@@ -139,6 +139,12 @@ module.exports = function ( grunt ) {
 						dest: '<%= compile_dir %>/components',
 						cwd: 'vendor',
 						expand: true
+					},
+					{
+						src: [ '**/steroids.js' ],
+						dest: '<%= compile_dir %>/vendor',
+						cwd: 'vendor',
+						expand: true
 					}
 				]
 			}
@@ -271,7 +277,10 @@ module.exports = function ( grunt ) {
 				eqnull: true,
 				globals: {
 					'angular': true,
-					'console': true
+					'console': true,
+					'steroids': true,
+					'window': true,
+					'alert': true
 				}
 			}
 
@@ -325,7 +334,7 @@ module.exports = function ( grunt ) {
 				dir: '<%= build_dir %>',
 				src: [
 					'<%= vendor_files.js %>',
-					'!**/steroids.js',
+					//'!**/steroids.js',
 					'<%= build_dir %>/src/**/*.js',
 					'<%= html2js.common.dest %>',
 					'<%= html2js.app.dest %>',
@@ -389,7 +398,7 @@ module.exports = function ( grunt ) {
 				files: [
 					'<%= app_files.js %>'
 				],
-				tasks: [ 'default' ]
+				tasks: [ 'jshint:src', 'copy:build_appjs' ]
 			},
 
 
@@ -409,7 +418,7 @@ module.exports = function ( grunt ) {
 			 */
 			html: {
 				files: [ '<%= app_files.html %>' ],
-				tasks: [ 'default' ]
+				tasks: [ 'index:build' ]
 			},
 
 			/**
@@ -420,7 +429,7 @@ module.exports = function ( grunt ) {
 					'<%= app_files.atpl %>',
 					'<%= app_files.ctpl %>'
 				],
-				tasks: [ 'default' ]
+				tasks: [ 'html2js' ]
 			},
 
 			/**
@@ -428,7 +437,7 @@ module.exports = function ( grunt ) {
 			 */
 			css: {
 				files: [ 'src/**/*.css' ],
-				tasks: [ 'default' ]
+				tasks: [ 'recess:build' ]
 			}
 
 
@@ -445,7 +454,7 @@ module.exports = function ( grunt ) {
 	 * before watching for changes.
 	 */
 	grunt.renameTask( 'watch', 'delta' );
-	grunt.registerTask( 'watch', [ 'build', 'compile', 'delta' ] );
+	grunt.registerTask( 'watch', [ 'build', 'delta' ] );
 
 	/**
 	 * The default task is to build and compile.
@@ -458,7 +467,7 @@ module.exports = function ( grunt ) {
 	grunt.registerTask( 'build', [
 		'clean', 'html2js', 'jshint', 'recess:build',
 		'concat:build_css', 'copy:build_mobile_assets', 'copy:build_app_assets', 'copy:build_vendor_assets',
-		'copy:build_appjs', 'copy:build_vendorjs', 'index:build'
+		'copy:build_appjs', 'copy:build_vendorjs', 'index:build', 'copy:steroids_shit'
 	]);
 
 	/**

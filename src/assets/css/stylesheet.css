@@ -41,6 +41,11 @@ input, textarea, [contenteditable] * {
     border: 1px solid #a5a8a8 !important;
 }
 
+.grenz {
+    background-color: #009921 !important;
+    border: 1px solid #a5a8a8 !important;
+}
+
 .nasty-icons {
     font-family: "nasty-icons";
     src: url("../font/nasty-icons.ttf");
